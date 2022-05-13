@@ -1,0 +1,58 @@
+
+
+
+..>>>>kubernetes installtion ........&&&&&&......creating a pod.......using ubuntu-----image-----
+
+
+    1  apt update && apt install docker.io -y
+    2  docker -v
+    3  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    4  curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+    5  echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+    6  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+    7  kubectl version --client
+    8  cat /etc/os-relese
+    9  cat /etc/os-release
+   10  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+   11  sudo dpkg -i minikube_latest_amd64.deb
+   12  minikube start
+   13  kubectl -v
+   14  kubectl -version
+   15  which kubectl
+   16  ls -a
+   17  kubectl version
+   18  apt install conntrack
+   19  minikube start --vm-driver=none
+   20  minikube status
+   21  kubectl get nodes
+   22  kubectl desribe node
+   23  kubectl describe node
+   24  vi podi.yml
+
+>>>>>>>>>>>>>.......<<<<<<<<<<<<
+
+kind: Pod                              
+apiVersion: v1                     
+metadata:                           
+  name: testpod                  
+spec:                                    
+  containers:                      
+    - name: c00                     
+      image: ubuntu              
+      command: ["/bin/bash", "-c", "while true; do echo Hello-Manoj and moulali; sleep 5 ; done"]
+  restartPolicy: Never         # Defaults to Always
+
+
+??????????????......!!!!!!!!!!!!!!!!
+
+
+   25  kubectl apply -f podi.yml
+   26  kubectl get pods
+   27  kubectl get pods -o wide
+   28  kubectl describe pod testpod
+   29  kubectl logs -f testpod
+   30  kubectl logs -f testpod -c c00
+   31  kubectl delet pod testpod
+   32  kubectl delete pod testpod
+   33  kubectl get pods
+   34  history
