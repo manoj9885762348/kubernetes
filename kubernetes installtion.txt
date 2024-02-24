@@ -56,3 +56,5 @@ spec:
    32  kubectl delete pod testpod
    33  kubectl get pods
    34  history
+
+
